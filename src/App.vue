@@ -1,7 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
-import myPic from '../img/my-pic.jpg';
+import myPic from '/my-pic.jpg';
 import { CheckBadgeIcon, DocumentArrowDownIcon, ChevronDoubleUpIcon } from "@heroicons/vue/24/solid";
 import {BuildingLibraryIcon, LightBulbIcon, UserGroupIcon} from "@heroicons/vue/24/outline"
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
