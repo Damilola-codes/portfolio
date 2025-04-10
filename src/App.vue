@@ -175,9 +175,9 @@ onMounted(() => {
           <h1 class="text-4xl md:text-5xl font-bold">👋 Hi, I'm Damilola</h1>
           <p class="mt-4 text-lg text-gray-300">Software Engineer | Web Developer</p>
           <div class="mt-6 flex justify-center items-center md:justify-start space-x-4">
-            <a href="https://github.com/damilola-codes" class="bg-green-600 hover:bg-gray-600 text-white px-4 py-2 rounded-lg items-center flex gap-1.5"><Github class="w-6 h-6" />GitHub</a>
-            <a href="https://linkedin.com/in/damilolacodes001" class="bg-green-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Linkedin class="w-6 h-6" />LinkedIn</a>
-            <a href="https://twitter.com/damilola-codes" class="bg-green-400 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Twitter class="w-6 h-6" />Twitter</a>
+            <a href="https://github.com/damilola-codes" class="bg-gray-600 hover:bg-gray-600 text-white px-4 py-2 rounded-lg items-center flex gap-1.5"><Github class="w-6 h-6" />GitHub</a>
+            <a href="https://linkedin.com/in/damilolacodes001" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Linkedin class="w-6 h-6" />LinkedIn</a>
+            <a href="https://twitter.com/damilola-codes" class="bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Twitter class="w-6 h-6" />Twitter</a>
           </div>
           <p class="text-lg text-gray-300">Scroll to learn more about me</p>
         </div>
