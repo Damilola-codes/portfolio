@@ -1,6 +1,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
+import myPic from '../img/my-pic.jpg';
 import { CheckBadgeIcon, DocumentArrowDownIcon, ChevronDoubleUpIcon } from "@heroicons/vue/24/solid";
 import {BuildingLibraryIcon, LightBulbIcon, UserGroupIcon} from "@heroicons/vue/24/outline"
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -167,7 +168,7 @@ onMounted(() => {
       <div class="grid md:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
         <!-- Left Side: Image -->
         <div class="flex justify-center">
-          <img src="../img/my-pic.jpg" alt="Your Photo"
+          <img :src="myPic" alt="Your Photo"
             class="w-60 h-60 md:w-80 md:h-80 object-cover rounded-full border-4 border-gray-500 shadow-lg">
         </div>
         <!-- Right Side: Text -->
@@ -190,7 +191,7 @@ onMounted(() => {
       <!-- Left: Photo -->
       <div ref="photoBox" class="flex justify-center">
         <img
-          src="../img/my-pic.jpg"
+          :src="myPic"
           alt="Profile Photo"
           class="object-cover rounded-3xl shadow-xl border-4 border-gray-500"
         />
