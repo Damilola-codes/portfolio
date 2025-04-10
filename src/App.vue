@@ -1,7 +1,6 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
-import myPic from '/my-pic.jpg';
 import { CheckBadgeIcon, DocumentArrowDownIcon, ChevronDoubleUpIcon } from "@heroicons/vue/24/solid";
 import {BuildingLibraryIcon, LightBulbIcon, UserGroupIcon} from "@heroicons/vue/24/outline"
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
@@ -168,7 +167,7 @@ onMounted(() => {
       <div class="grid md:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
         <!-- Left Side: Image -->
         <div class="flex justify-center">
-          <img :src="myPic" alt="Your Photo"
+          <img src="/my-pic.jpg" alt="Your Photo"
             class="w-60 h-60 md:w-80 md:h-80 object-cover rounded-full border-4 border-gray-500 shadow-lg">
         </div>
         <!-- Right Side: Text -->
@@ -191,7 +190,7 @@ onMounted(() => {
       <!-- Left: Photo -->
       <div ref="photoBox" class="flex justify-center">
         <img
-          :src="myPic"
+          src="/my-pic.jpg"
           alt="Profile Photo"
           class="object-cover rounded-3xl shadow-xl border-4 border-gray-500"
         />
@@ -262,7 +261,7 @@ onMounted(() => {
     <!-- Download CV Button -->
     <div class="mt-10 text-center">
       <section class="mt-16 text-center">
-      <a href="/cv.pdf" download class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
+      <a href="#" download class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
         <DocumentArrowDownIcon class="w-6 h-6 mr-2" /> Download CV
       </a>
       </section>
