@@ -2,6 +2,9 @@
 import { ref, onMounted } from "vue";
 import gsap from "gsap";
 import { CheckBadgeIcon, DocumentArrowDownIcon, ChevronDoubleUpIcon } from "@heroicons/vue/24/solid";
+import Navbar from "./components/Navbar.vue"
+import TestimonialSection from "./components/TestimonialSection.vue"
+import Skills from "./components/Skills.vue"
 import {BuildingLibraryIcon, LightBulbIcon, UserGroupIcon} from "@heroicons/vue/24/outline"
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import { Github, Linkedin, Twitter, Mail, Globe } from 'lucide-vue-next'
@@ -16,6 +19,35 @@ const scrollToAbout = () => {
     ease: "power2.out"
   })
 }
+
+const title = ref(null);
+
+const projects = ref([
+  {
+    name: "Crackk Education",
+    description: "A platform for creators and learners to earn while educating others.",
+    tech: "Vue.js, Tailwind CSS, Supabase, Node.js",
+    image: "https://via.placeholder.com/400x200?text=Crackk+Education",
+    live: "https://crackk.app", // Replace with real link
+    github: "https://github.com/damilola-codes/",
+  },
+  {
+    name: "Dev Portfolio",
+    description: "Animated and responsive developer portfolio website.",
+    tech: "Vue.js, Tailwind CSS, GSAP",
+    image: "https://via.placeholder.com/400x200?text=Dev+Portfolio",
+    live: "#",
+    github: "https://github.com/your-username/portfolio",
+  },
+  {
+    name: "E-Commerce App",
+    description: "Full-stack ecommerce app with secure payments and dashboard.",
+    tech: "Vue.js, Express, MongoDB",
+    image: "https://via.placeholder.com/400x200?text=E+Commerce+App",
+    live: "#",
+    github: "https://github.com/your-username/ecommerce",
+  },
+]);
 
 const showFAB = ref(false);
 
@@ -113,13 +145,17 @@ onMounted(() => {
     delay: 0.6,
     ease: 'power2.out',
   })
+  
 }
 );
 </script>
 
 <template>
   <div class="min-h-screen bg-gray-700 text-white font-sans text-center">
-    <div class="fixed left-4 bottom-4 flex flex-col gap-4 z-50">
+    <!-- Fixed Bottom Navbar -->
+    <Navbar />
+
+    <!-- <div class="fixed left-4 bottom-4 flex flex-col gap-4 z-50">
     <a href="https://github.com/damilola_codes" target="_blank" class="text-white hover:text-blue-500 transition">
       <Github class="w-6 h-6" />
     </a>
@@ -136,13 +172,13 @@ onMounted(() => {
     <a href="https://www.damilolacodes.xyz" target="_blank" class="text-white hover:text-blue-500 transition">
       <Globe class="w-6 h-6" />
     </a>
-    </div>
+    </div> -->
   <!-- Scroll to About Section Button -->
-  <div v-if="showFAB" @click="scrollToTop" class="fixed right-4 bottom-4 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg cursor-pointer transition z-10">
+  <div v-if="showFAB" @click="scrollToTop" class="fixed right-2 bottom-20 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg cursor-pointer transition z-10">
     <!-- <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
     </svg> -->
-    <ChevronDoubleUpIcon class="w-6 h-6"/>
+    <ChevronDoubleUpIcon class="w-6 h-6 animate-bounce"/>
   </div>
   <!-- Scroll Down Arrow -->
   <!-- <div ref="scrollBtn" class="fixed right-4 bottom-4 bg-yellow-500 hover:bg-yellow-600 text-white p-3 rounded-full shadow-lg cursor-pointer transition">
@@ -155,7 +191,7 @@ onMounted(() => {
     <svg
       @click="scrollToAbout"
       xmlns="http://www.w3.org/2000/svg"
-      class="h-10 w-10 text-green-400 hover:text-green-600 animate-bounce cursor-pointer transition"
+      class="h-10 w-10 text-green-400 hover:text-green-600 animate-bounce cursor-pointer transition mb-7"
       fill="none"
       viewBox="0 0 24 24"
       stroke="currentColor"
@@ -164,7 +200,7 @@ onMounted(() => {
     </svg>
   </div>
     <section class="h-screen flex items-center justify-center px-10">
-      <div class="grid md:grid-cols-2 gap-24 items-center max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-24 items-center max-w-3xl mx-auto">
         <!-- Left Side: Image -->
         <div class="flex justify-center">
           <img src="/my-pic.jpg" alt="Your Photo"
@@ -172,12 +208,12 @@ onMounted(() => {
         </div>
         <!-- Right Side: Text -->
         <div class="text-center md:text-left">
-          <h1 class="text-4xl md:text-5xl font-bold">👋 Hi, I'm Damilola</h1>
+          <h1 class="text-4xl md:text-4xl font-bold">👋 Hi, I'm  <span class="text-amber-200">Damilola</span>  </h1>
           <p class="mt-4 text-lg text-gray-300">Software Engineer | Web Developer</p>
-          <div class="mt-6 flex justify-center items-center md:justify-start space-x-4">
-            <a href="https://github.com/damilola-codes" class="bg-gray-600 hover:bg-gray-600 text-white px-4 py-2 rounded-lg items-center flex gap-1.5"><Github class="w-6 h-6" />GitHub</a>
-            <a href="https://linkedin.com/in/damilolacodes001" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Linkedin class="w-6 h-6" />LinkedIn</a>
-            <a href="https://twitter.com/damilola-codes" class="bg-gray-400 hover:bg-gray-600 text-white px-4 py-2 rounded-lg flex gap-1.5 "><Twitter class="w-6 h-6" />Twitter</a>
+          <div class="mt-6 flex justify-center items-center md:justify-start space-x-3">
+            <a href="https://github.com/damilola-codes" class="bg-gray-600 hover:bg-gray-600 text-white px-3 py-2 rounded-lg items-center flex gap-1.5"><Github class="w-6 h-6" />GitHub</a>
+            <a href="https://linkedin.com/in/damilolacodes001" class="bg-gray-500 hover:bg-gray-600 text-white px-3 py-2 rounded-lg flex gap-1.5 "><Linkedin class="w-6 h-6" />LinkedIn</a>
+            <a href="https://twitter.com/damilola-codes" class="bg-gray-400 hover:bg-gray-600 text-white px-3 py-2 rounded-lg flex gap-1.5 "><Twitter class="w-6 h-6" />Twitter</a>
           </div>
           <p class="text-lg text-gray-300">Scroll to learn more about me</p>
         </div>
@@ -190,9 +226,9 @@ onMounted(() => {
       <!-- Left: Photo -->
       <div ref="photoBox" class="flex justify-center">
         <img
-          src="/my-pic.jpg"
+          src="/mypic.jpeg"
           alt="Profile Photo"
-          class="object-cover rounded-3xl shadow-xl border-4 border-gray-500"
+          class=" sm:w-100 sm:100 md:w-100 md:h-100 object-cover rounded-3xl shadow-xl border-4 border-gray-500"
         />
       </div>
 
@@ -241,7 +277,7 @@ onMounted(() => {
     </section>
 
     <!-- Animated Expertise Levels -->
-    <section class="mt-16 text-center">
+    <!-- <section class="mt-16 text-center">
       <h2 class="text-3xl font-bold">My Skill Levels</h2>
       <div class="max-w-3xl mx-auto mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div
@@ -256,15 +292,70 @@ onMounted(() => {
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
+    <Skills/>
 
     <!-- Download CV Button -->
-    <div class="mt-10 text-center">
-      <section class="mt-16 text-center">
+    <div class="mt-10  text-center">
+      <section class="mt-16 mb-16 text-center">
       <a href="#" download class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg inline-flex items-center">
         <DocumentArrowDownIcon class="w-6 h-6 mr-2" /> Download CV
       </a>
       </section>
+    <!--Project showcase section-->
+      <section id="projects" class="py-20 px-5 bg-white dark:bg-gray-900">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-amber-200">My Recent Work</p>
+      <h2
+        ref="title"
+        class="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+      >
+        Portfolio
+      </h2>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div
+          v-for="(project, index) in projects"
+          :key="index"
+          class="bg-gray-50 dark:bg-gray-800 shadow-xl rounded-xl overflow-hidden transition duration-300 transform hover:-translate-y-2"
+        >
+          <img
+            :src="project.image"
+            :alt="project.name"
+            class="w-full h-48 object-cover"
+          />
+          <div class="p-5">
+            <h3 class="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+              {{ project.name }}
+            </h3>
+            <p class="text-sm text-gray-600 dark:text-gray-300 mb-3">
+              {{ project.description }}
+            </p>
+            <p class="text-sm text-amber-200 dark:text-amber-200 font-medium mb-4">
+             <span class="text-white">Tools: </span>{{ project.tech }}
+            </p>
+            <div class="space-x-4 justify-items-center">
+              <a
+                :href="project.live"
+                target="_blank"
+                class="text-white bg-green-600 hover:bg-green-700 px-4 py-2 rounded text-sm"
+              >
+                Live Demo
+              </a>
+              <a
+                :href="project.github"
+                target="_blank"
+                class="text-green-600 border border-green-600 hover:bg-indigo-50 dark:hover:bg-gray-700 px-4 py-2 rounded text-sm"
+              >
+                GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<TestimonialSection/>
     </div>
   </div>
 </template>
