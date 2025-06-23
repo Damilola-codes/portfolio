@@ -5,29 +5,53 @@
     import ProjectCard from '../components/ProjectCard.vue';
     import ProjectReviewCard from '../components/ProjectReviewCard.vue';
     import {IconBrandX, IconBrandLinkedin} from '@tabler/icons-vue';
+    
 
     onMounted(() => {
-        // Ensure .animate-scroll has its content duplicated for the infinite scroll effect.
-        // The width of .animate-scroll should be the total width of all its children (original + duplicates).
-        // For x: '-50%' to work correctly, .animate-scroll should contain two identical sets of items.
         gsap.to('.animate-scroll', {
-            x: '-50%', // This assumes the .animate-scroll div's width is twice the width of one set of items.
-            duration: 10,
+            x: '-50%', //The .animate-scroll div's width is twice the width of one set of items.
+            duration: 20,
             ease: 'linear',
-            repeat: -1
+            repeat: -1,
         });
-        // The timeline animation remains the same
         gsap.from('.timeline-items', {
             y: 50,
             opacity: 0,
-            duration: 1,
-            stagger: 0.4,
+            duration: 2,
+            stagger: 0.5,
+                scrollTrigger: {
+                    trigger: '.timeline-items',
+                    start: 'top 80%'
+                }
+            });
+        gsap.from('.timeline-about', {
+            y: 50,
+            opacity: 0,
+            duration: 2,
+                scrollTrigger: {
+                    trigger: '.timeline-about',
+                    start: 'top 80%'
+                }
+            });
+            });
+        gsap.from('.timeline-exp', {
+            y: 50,
+            opacity: 0,
+                scrollTrigger: {
+                    trigger: '.timeline-exp',
+                    start: 'top 80%'
+                }
+            });
+        gsap.from('.timeline-project', {
+            y: 50,
+            opacity: 0,
+            duration: 2,
+            stagger: 0.5,
             scrollTrigger: {
-                trigger: '.timeline-items',
+                trigger: '.timeline-project',
                 start: 'top 80%'
-            }
-        });
-    });
+            },
+});
 
     const projects = [
         {
@@ -56,11 +80,12 @@
         }
     ]
     const experiences = [
-        {year: '2020', role: 'Frontend Intern at', company: 'TechNest'},
-        {year: '2022', role: 'Junior Developer at', company: 'Codecraft'},
-        {year: '2020', role: 'Frontend Engineer at', company: 'BuildPay'},
-        {year: '2020', role: 'Lead Developer at', company: 'MicoMicra'},
-    ]
+        {year: '2023 - 2024', role: 'Frontend Engineer at', company: 'ALX AFRICA'},
+        {year: '2023 - Present', role: 'React.js Developer', company: 'Upwork'},
+        {year: '2024 - Present', role: 'Vue.js Developer', company: 'Upwork'},
+        {year: 'February - June 2024', role: 'Frontend Intern at', company: 'Innkeeper'},
+    ];
+
 </script>
 <template>
     <section class="bg-[#f7f7f7] py-5 min-h-screen border-l border-r border-gray-300 font-sans 
@@ -72,29 +97,36 @@
                     </a>
                     <a href="https://x.com/damilolacodes" target="_blank" class="p-1 sm:p-2"><IconBrandX class="w-5 h-5 sm:w-6 sm:h-6"/></a>
                     <a href="https://linkedin.com/in/damilolacodes001" target="_blank" class="p-1 sm:p-2"><IconBrandLinkedin class="w-5 h-5 sm:w-6 sm:h-6"/></a>
-                    <DocumentTextIcon class="w-5 h-5 sm:w-6 sm:h-6 mx-1 sm:mx-2"/>
-                    <button class="text-white bg-black rounded-xl py-1.5 px-3 sm:py-2 sm:px-4 text-sm sm:text-base">Book a Call</button>
+                    <a href="/public/Damilola_Odeyemi_Frontend_Resume_2025.pdf.pdf">
+                        <DocumentTextIcon class="w-5 h-5 sm:w-6 sm:h-6 mx-1 sm:mx-2 cursor-pointer"/>
+                    </a>
+                    <a href="">
+                        <button class="text-white bg-black rounded-xl py-1.5 px-3 sm:py-2 sm:px-4 text-sm sm:text-base cursor-pointer">Book a call</button>
+                    </a>
                 </div>
             </header>
 
             <!--HERO/INRO SECTION-->
-        <div class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl mx-auto text-center sm:text-left">
-            <div>
-                <img src="../assets/my-pic.jpg" class="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover mx-auto sm:mx-0" alt="Damilola Codes">
+        <div class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto text-center sm:text-left">
+            <div class="flex justify-self-start">
+                <img loading="lazy"  src="../assets/my-pic.jpg" class="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover mx-auto sm:mx-0" alt="Damilola Codes">
             </div>
-            <div class="py-4 sm:py-5">
-                <h2 class="text-2xl sm:text-3xl font-bold w-full timeline-items">Hey, I'm Damilola Codes.</h2>
-                <h2 class="text-2xl sm:text-3xl font-bold md-3 w-full timeline-items"> Software Engineer.</h2>
+            <div class="py-4 sm:py-5 text-left">
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold w-full timeline-items mb-1">Hey, I'm Damilola Codes.</h2>
+                <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold md-3 w-full timeline-items"> Software Engineer.</h2>
             </div>
-            <div class="w-full text-gray-500 leading-relaxed timeline-items text-sm sm:text-base">Creating seamless experiences with bold visuals and building scalable system designs. Creative thinker, innovator, and amiable person.</div>
-            <div class="space-x-2 sm:space-x-4 py-5 timeline-items">
-                <button class="text-white bg-black rounded-xl py-2 px-4 text-sm sm:text-base">Book a Call</button>
+            
+            <div class="w-full text-gray-500 leading-relaxed timeline-items text-sm text-left sm:text-base">Creating seamless experiences with bold visuals and building scalable system designs. <br/> A creative thinker, innovator, and approachable collaborator.</div>
+            <div class="space-x-2 sm:space-x-2 sm:space-y-4 py-5 place-self-start timeline-items">
+                <a href="">
+                    <button class="text-white bg-black rounded-xl py-2 px-4 text-sm mb-2 sm:text-base">Hire Me!</button>
+                </a>
                 <button class="text-green-500 bg-green-200 rounded-full py-2 px-4 text-sm sm:text-base"><span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span>  Available to new projects</button>
             </div>
         </div>
 
             <!--PROJECT HIGHLIGHTS-->
-        <section id="project-highlights" class="relative z-10 pb-10 overflow-hidden 
+        <section id="project-highlights" class="relative  pb-10 overflow-hidden 
                         xl:-ml-60 xl:w-[calc(100%+30rem)]
                         lg:-ml-32 lg:w-[calc(100%+16rem)]
                         md:-ml-16 md:w-[calc(100%+8rem)]
@@ -166,15 +198,15 @@
         </section>
 
         <!-- EXPERIENCE SECTION  -->
-        <section id="experience" class="px-4 sm:px-6 md:px-8 mt-10 sm:mt-15 py-8 sm:py-10">
+        <section id="experience" class="px-4 sm:px-6 md:px-8 mt-10 sm:mt-15 py-8 sm:py-10 mx-auto">
             <div class="max-w-5xl mx-auto">
                 <h3 class="text-xl sm:text-2xl font-semibold mb-8 sm:mb-10 md:text-3xl">Work Experience</h3>
                 <div class="relative border-l-2 border-gray-300">
-                    <div class="mb-8 sm:mb-12 pl-4 sm:pl-6 relative timeline-items"
+                    <div class="mb-8 sm:mb-12 pl-4 sm:pl-6 relative timeline-exp"
                     v-for="(exp, index) in experiences"
                     :key='index'
                     >
-                        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-600 rounded-full border-4 border-amber-100"></div>
+                        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-600 rounded-full border-4 border-white"></div>
                         <p class="text-xs sm:text-sm text-gray-500">{{ exp.year }}</p>
                         <h4 class="text-base sm:text-lg font-semibold text-gray-800">{{ exp.role }}</h4>
                         <p class="text-sm sm:text-base text-gray-600">{{ exp.company }}</p>
@@ -184,7 +216,8 @@
         </section>
         <!--Projects-->
         <section id="projects" class="py-8 sm:py-10">
-             <div class="flex flex-wrap gap-4 sm:gap-6 justify-center px-2 sm:px-4">
+            <h3 class="flex justify-center pb-20 place-items-center md:text-3xl font-semibold sm:text-2xl">Check What I've Been Up To</h3>
+             <div class="flex flex-wrap gap-4 sm:gap-6 justify-center px-2 sm:px-4"> 
                 <ProjectCard 
                 v-for="(project, index) in projects"
                 :key="index"

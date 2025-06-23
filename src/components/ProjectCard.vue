@@ -3,8 +3,8 @@
     class="relative w-full max-w-sm p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
         <img :src="image"
         :alt="title"
-        class="w-full h-56 object-cover rounded-xl"/>
-        <h3 class="text-lg mt-4 font-semibold text-gray-800">{{title}}</h3>
+        class="w-full h-64 object-cover rounded-xl"/>
+        <h3 class="text-lg md:text-2xl mt-4 font-semibold text-gray-800">{{title}}</h3>
         <p class="text-sm text-gray-500 mt-1">{{ description }}</p>
             <a href=""
                 target="_blank"

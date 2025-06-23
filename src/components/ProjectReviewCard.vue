@@ -1,5 +1,5 @@
 <template>
-    <div class="relative bg-gray-300 rounded-2xl p-4 h- w-[550px] max-w-3xl mx-auto">
+    <div class="relative bg-gray-300 rounded-2xl p-4 w-[500px] max-w-3xl mx-auto">
         <span
         v-for="(pos, index) in boltPosition"
         :key="index"
@@ -8,7 +8,7 @@
     </span>
         <div :class="`border-6 border-y-16 shadow-xl rounded-xl overflow-hidden h-60 object-cover`"
     :style="{borderColor: borderColor}">
-            <img :src="imageSrc" :alt="altText" 
+            <img loading="lazy" :src="imageSrc" :alt="altText" 
             class="w-full h-auto object-cover"
             />
         </div>
