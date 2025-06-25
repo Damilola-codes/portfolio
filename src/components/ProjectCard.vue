@@ -1,9 +1,9 @@
 <template>
     <div ref="cardRef"
-    class="relative w-full max-w-sm p-4 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
+    class="relative w-full max-w-sm p-5 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-400">
         <img :src="image"
         :alt="title"
-        class="w-full h-64 object-cover rounded-xl"/>
+        class="w-full h-64 object-cover rounded-xl bg-gray-300 p-2"/>
         <h3 class="text-lg md:text-2xl mt-4 font-semibold text-gray-800">{{title}}</h3>
         <p class="text-sm text-gray-500 mt-1">{{ description }}</p>
             <a href=""
