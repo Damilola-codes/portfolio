@@ -130,7 +130,7 @@
                 <a href="#contact">
                     <button class="text-white bg-black rounded-xl py-2 px-4 text-sm sm:text-base">Hire Me!</button>
                 </a>
-                <button class="bg-green-200 text-green-500 rounded-full py-2 px-4 text-sm sm:text-base"><span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1"></span> 
+                <button class="bg-green-200 text-green-500 rounded-full py-2 px-4 text-sm sm:text-base"><span class="inline-block w-2 h-2 bg-green-500 rounded-full mr-1 animate-ping"></span> 
   <span class="hidden sm:inline">Available to new projects</span>
   <span class="inline sm:hidden">Open to Work</span>
 </button>
