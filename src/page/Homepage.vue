@@ -204,7 +204,10 @@
     <div class="pb-24 about-content">
       <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 md:text-3xl">About</h3>
       <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-500">
-        Hi, I'm Damilola — a software developer, engineer, and technical writer.<br/>I'm a self-taught developer, driven by curiosity and a deep passion for transforming ideas into impactful digital experiences.<br/> Whether it's crafting digital interfaces, designing immersive visuals, architecting scalable solutions for businesses, or building websites that feels effortless to use, I thrive at the intersection of creativity and technology.
+        Hi, I’m Damilola — a software engineer with a focus on frontend development.<br/>
+I design and build performant, accessible, and scalable web interfaces using modern frameworks like Typescript, VueJS, ReactJS, and NEXTJS.<br/>
+With a solid understanding of UX principles, responsive design, and frontend architecture, I help teams and businesses create digital experiences that are both intuitive and impactful.
+From prototypes to production-ready apps, I deliver frontend solutions that feel effortless to use — and powerful under the hood.
       </p>
     </div>
 
