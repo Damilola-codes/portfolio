@@ -5,7 +5,7 @@
         :alt="title"
         class="w-full h-64 object-cover rounded-xl bg-gray-300 p-2"/>
         <h3 class="text-lg md:text-2xl mt-4 font-semibold text-gray-800">{{title}}</h3>
-        <p class="text-sm text-gray-500 mt-1">{{ description }}</p>
+        <p class="text-sm text-gray-500 mt-1">{{ description}}</p>
             <a href=""
                 target="_blank"
                 rel="noopener noreferrer"

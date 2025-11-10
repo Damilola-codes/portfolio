@@ -65,7 +65,7 @@
     const projects = [
         {
             image: '/image1.jpg',
-            title: 'Nature Portfolio',
+            title: 'Damilola Portfolio.',
             description: 'Discover the beauty of nature.',
             link: 'https://www.damilolcodes.xyz'
         },
@@ -77,9 +77,9 @@
         },
         {
             image: '/image3.jpg',
-            title: 'Nature Portfolio',
-            description: 'Discover the beauty of nature.',
-            link: 'https://www.damilolcodes.xyz'
+            title: 'Lenno',
+            description: 'Freelacing Job Platform that helps you get your tasks done faster.',
+            link: 'https://lenno.xyz'
         },
         {
             image: '/image4.jpg',
@@ -149,7 +149,7 @@
 
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/image3.jpg"
+            imageSrc="/lenno.png"
             altText="Nature Nest Website"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
@@ -174,8 +174,8 @@
             
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/image3.jpg"
-            altText="Nature Nest Website"
+            imageSrc="/lenno.png"
+            altText="Freelancing Website"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
             </div>
@@ -204,10 +204,10 @@
     <div class="pb-24 about-content">
       <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 md:text-3xl">About</h3>
       <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-500">
-        Hi, I’m Damilola — a software engineer with a focus on frontend development.<br/>
+        Hi, I’m Damilola; a software engineer with a focus on frontend development.<br/>
 I design and build performant, accessible, and scalable web interfaces using modern frameworks like Typescript, VueJS, ReactJS, and NEXTJS.<br/>
 With a solid understanding of UX principles, responsive design, and frontend architecture, I help teams and businesses create digital experiences that are both intuitive and impactful.
-From prototypes to production-ready apps, I deliver frontend solutions that feel effortless to use — and powerful under the hood.
+<br></br>From prototypes to production-ready apps, I deliver frontend solutions that feel effortless to use and powerful under the hood.
       </p>
     </div>
 
