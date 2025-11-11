@@ -217,7 +217,7 @@
 <section id="about" class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto text-left">
     <!-- Text Content -->
     <div class="pb-24 about-content">
-      <h3 class="text-2xl sm:text-4xl font-semibold mb-4 sm:mb-5 md:text-3xl underline">About.</h3>
+      <h3 class="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-5 md:text-3xl underline">About.</h3>
       <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-500">
         Hi, I’m Damilola; a software engineer with a focus on frontend development.<br/>
 I design and build performant, accessible, and scalable web interfaces using modern frameworks like Typescript, VueJS, ReactJS, and NEXTJS.<br/>
@@ -280,7 +280,7 @@ With a solid understanding of UX principles, responsive design, and frontend arc
                 </div>
             </div>
         </div>
-    </div>•
+    </div>
 </section>
 
         <!--Projects-->
