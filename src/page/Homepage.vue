@@ -11,6 +11,10 @@
     import Testimonial from '../components/Testimonial.vue'
     import Contact from '../components/Contact.vue'
     import Footer from '../components/Footer.vue'
+    // import local hero image from src/assets so the bundler includes it reliably
+    import myPic from '../assets/my-pic.jpg';
+    // public asset (served from /). Keep as a constant and bind it in template for consistency.
+    const profilePic = '/profile-pic.jfif';
     
     gsap.registerPlugin(ScrollTrigger);
 
@@ -76,9 +80,9 @@
             link: 'https://crackk.space'
         },
         {
-            image: '/image3.jpg',
+            image: '/lenno.png',
             title: 'Lenno',
-            description: 'Freelacing Job Platform that helps you get your tasks done faster.',
+            description: 'Freelancing Job Platform that helps you get your tasks done faster.',
             link: 'https://lenno.xyz'
         },
         {
@@ -87,13 +91,24 @@
             description: 'Innovating with the latest tech.',
             link: 'https://www.damilolcodes.xyz'
         }
-    ]
-    const experiences = [
-        {year: '2023 - 2024', role: 'Frontend Engineer at', company: 'ALX AFRICA'},
-        {year: '2023 - Present', role: 'React.js Developer', company: 'Upwork'},
-        {year: '2024 - Present', role: 'Vue.js Developer', company: 'Upwork'},
-        {year: 'February - June 2024', role: 'Frontend Intern at', company: 'Innkeeper'},
     ];
+    const experiences = [
+        {year: 'Sep. 2023 - 2024', role: 'Frontend Engineer', company: 'ALX AFRICA', logo: '/alx.jpeg', remote: true},
+        {year: '2024 - Present', role: 'React.js Developer', company: 'Upwork', logo: '/upwork.png', remote: true},
+        {year: '2024 - Present', role: 'Vue.js Developer', company: 'Upwork', logo: '/upwork.png', remote: true},
+        {year: 'Feb - Jun 2024', role: 'Frontend Intern', company: 'Innkeeper', logo: '/innkeeper.png', remote: false, hybrid: true},
+    ];
+
+    // Helper to create initials for a simple logo if no image is provided
+    const getInitials = (name) => {
+        if (!name) return '';
+        return name
+            .split(' ')
+            .map(w => w[0])
+            .slice(0,2)
+            .join('')
+            .toUpperCase();
+    }
 
 </script>
 <template>
@@ -106,7 +121,7 @@
                     </a>
                     <a href="https://x.com/damilolacodes" target="_blank" class="p-1 sm:p-2"><IconBrandX class="w-5 h-5 sm:w-6 sm:h-6"/></a>
                     <a href="https://linkedin.com/in/damilolacodes001" target="_blank" class="p-1 sm:p-2"><IconBrandLinkedin class="w-5 h-5 sm:w-6 sm:h-6"/></a>
-                    <a href="/public/Damilola_Odeyemi_Frontend_Resume_2025.pdf.pdf">
+                    <a href="/Damilola_Odeyemi_Frontend_Resume_2025.pdf">
                         <DocumentTextIcon class="w-5 h-5 sm:w-6 sm:h-6 mx-1 sm:mx-2 cursor-pointer"/>
                     </a>
                     <a href="https://calendly.com/damilola-codes">
@@ -118,7 +133,7 @@
             <!--HERO/INRO SECTION-->
         <div class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto text-center sm:text-left">
             <div class="flex justify-self-start hero-item">
-                <img loading="lazy"  src="../assets/my-pic.jpg" class="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover mx-auto sm:mx-0" alt="Damilola Codes">
+                <img loading="lazy" :src="myPic" class="rounded-full w-24 h-24 sm:w-32 sm:h-32 object-cover mx-auto sm:mx-0" alt="Damilola Codes">
             </div>
             <div class="py-4 sm:py-5 text-left">
                 <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold w-full hero-item mb-1">Hey, I'm Damilola Codes.</h2>
@@ -202,7 +217,7 @@
 <section id="about" class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto text-left">
     <!-- Text Content -->
     <div class="pb-24 about-content">
-      <h3 class="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5 md:text-3xl">About</h3>
+      <h3 class="text-2xl sm:text-4xl font-semibold mb-4 sm:mb-5 md:text-3xl underline">About.</h3>
       <p class="text-sm sm:text-base md:text-lg leading-relaxed text-gray-500">
         Hi, I’m Damilola; a software engineer with a focus on frontend development.<br/>
 I design and build performant, accessible, and scalable web interfaces using modern frameworks like Typescript, VueJS, ReactJS, and NEXTJS.<br/>
@@ -216,7 +231,7 @@ With a solid understanding of UX principles, responsive design, and frontend arc
         <div class="relative w-full max-w-[16rem] sm:max-w-xs md:max-w-sm lg:max-w-md mx-auto">
             <div class="bg-green-200 transform rotate-6 sm:rotate-12 rounded-xl p-1 sm:p-2">
                 <img
-                    src="/profile-pic.jfif"
+                    :src="profilePic"
                     alt="About Damilola"
                     class="w-full h-auto object-cover rounded-xl transform -rotate-6 sm:-rotate-12 shadow-lg"
                 />
@@ -226,24 +241,46 @@ With a solid understanding of UX principles, responsive design, and frontend arc
 </section>
 
 
-        <!-- EXPERIENCE SECTION  -->
-        <section id="experience" class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto text-center sm:text-left">
-  <div class="max-w-5xl mx-auto">
-    <h3 class="text-xl sm:text-2xl font-semibold mb-8 md:text-3xl">Work Experience</h3>
-    
-    <div class="relative border-l-2 border-gray-300">
-      <div
-        class="mb-8 pl-4 sm:pl-6 relative experience-item"
-        v-for="(exp, index) in experiences"
-        :key="index"
-      >
-        <div class="absolute -left-[9px] top-1 w-4 h-4 bg-green-600 rounded-full border-4 border-white"></div>
-        <p class="text-xs sm:text-sm text-gray-500">{{ exp.year }}</p>
-        <h4 class="text-base sm:text-lg font-semibold text-gray-800">{{ exp.role }}</h4>
-        <p class="text-sm sm:text-base text-gray-600">{{ exp.company }}</p>
-      </div>
-    </div>
-  </div>
+                <!-- EXPERIENCE SECTION  -->
+                <section id="experience" class="px-4 sm:px-6 md:px-8 py-10 sm:py-12 max-w-lg md:max-w-3xl md:mx-auto">
+    <div class="max-w-5xl mx-auto">
+        <h3 class="text-3xl sm:text-4xl font-semibold mb-8 underline">Work Experience.</h3>
+
+        <div class="space-y-4">
+            <div
+                v-for="(exp, index) in experiences"
+                :key="index"
+                class="flex flex-col sm:flex-row sm:items-center gap-4 bg-white rounded-2xl p-4 shadow-sm"
+            >
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <div class="w-12 h-12 sm:w-14 md:w-16 rounded-md overflow-hidden bg-gray-100">
+                        <template v-if="exp.logo">
+                            <img :src="exp.logo" :alt="exp.company + ' logo'" class="w-full h-full object-cover" />
+                        </template>
+                        <template v-else>
+                            <div class="w-full h-full flex items-center justify-center text-sm sm:text-base font-semibold text-gray-800">{{ getInitials(exp.company) }}</div>
+                        </template>
+                    </div>
+                </div>
+
+                <!-- Company + meta inline, role below -->
+                <div class="flex-1 min-w-0">
+                    <div class="flex items-center justify-between gap-4">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <h4 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 truncate">{{ exp.company }} •</h4>
+                            <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 whitespace-nowrap">
+                                <span>{{ exp.year }}</span> •
+                                <span v-if="exp.remote" class="inline-block bg-green-50 text-green-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Remote</span>
+                                <span v-if="exp.hybrid" class="inline-block bg-yellow-50 text-yellow-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Hybrid</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-sm sm:text-base md:text-lg text-gray-600 mt-2 truncate">{{ exp.role }}</p>
+                </div>
+            </div>
+        </div>
+    </div>•
 </section>
 
         <!--Projects-->

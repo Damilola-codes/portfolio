@@ -1,5 +1,5 @@
 <template>
-    <div ref="cardRef"
+    <div
     class="relative w-full max-w-sm p-5 bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-400">
         <img :src="image"
         :alt="title"
@@ -16,34 +16,12 @@
     </div>
 </template>
 <script setup>
-    import {onMounted, ref} from  'vue'; // Added ref here
-    import {gsap} from 'gsap';
-    import {ScrollTrigger} from 'gsap/ScrollTrigger';
     import {ChevronRightIcon} from '@heroicons/vue/24/outline'
 
-    gsap.registerPlugin(ScrollTrigger);
     const props = defineProps({
         image: String,
         title: String,
         description: String,
         link: String
-    });
-
-    const cardRef = ref(null);
-
-    onMounted(() => {
-        // Ensure cardRef.value is available before using it
-        if (cardRef.value) {
-            gsap.from(cardRef.value, {
-                opacity: 0,
-                y: 50,
-                duration: 0.8,
-                ease: 'power3.out',
-                scrollTrigger: {
-                    trigger: cardRef.value,
-                    start: 'top 90%',
-                }
-            });
-        }
     });
 </script>

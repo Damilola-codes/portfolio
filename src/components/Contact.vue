@@ -4,7 +4,7 @@
       <!-- Heading -->
       <h2 class="text-2xl sm:text-3xl font-bold  mb-3 py-6">Get In Touch</h2>
       <p class="text-gray-600 text-sm sm:text-base max-w-2xl mb-10">
-        Whether you’re launching a product, scaling a startup, or need a reliable developer to bring ideas to life — I’m here to help. I partner with teams and founders to build clean, scalable, and thoughtful solutions.
+        Whether you’re launching a product, scaling a startup, or need a reliable developer to bring ideas to life. I’m here to help. I partner with teams and founders to build clean, scalable, and thoughtful solutions.
 
 If you feel we could create something impactful together, drop a message below. I’d love to hear from you.
       </p>
