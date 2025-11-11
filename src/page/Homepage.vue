@@ -70,14 +70,14 @@
         {
             image: '/image1.jpg',
             title: 'Damilola Portfolio.',
-            description: 'Discover the beauty of nature.',
+            description: 'My Personal Portfolio Site.',
             link: 'https://www.damilolcodes.xyz'
         },
         {
             image: '/image2.jpg',
             title: 'Tech Portfolio',
             description: 'Innovating with the latest tech.',
-            link: 'https://crackk.space'
+            link: 'https://wwww.crackk.space'
         },
         {
             image: '/lenno.png',
@@ -85,12 +85,6 @@
             description: 'Freelancing Job Platform that helps you get your tasks done faster.',
             link: 'https://lenno.xyz'
         },
-        {
-            image: '/image4.jpg',
-            title: 'Tech Portfolio',
-            description: 'Innovating with the latest tech.',
-            link: 'https://www.damilolcodes.xyz'
-        }
     ];
     const experiences = [
         {year: 'Sep. 2023 - 2024', role: 'Frontend Engineer', company: 'ALX AFRICA', logo: '/alx.jpeg', remote: true},
