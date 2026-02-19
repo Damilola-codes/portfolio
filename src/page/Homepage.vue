@@ -2,7 +2,7 @@
     import {HomeIcon, DocumentTextIcon, ArrowRightCircleIcon} from '@heroicons/vue/24/outline';
     import {gsap} from 'gsap';
     import { ScrollTrigger } from "gsap/ScrollTrigger";
-    import { onMounted } from 'vue';
+    import { onMounted, ref } from 'vue';
     import ProjectCard from '../components/ProjectCard.vue';
     import ProfileCard from '../components/ProfileCard.vue'
     import ProjectReviewCard from '../components/ProjectReviewCard.vue';
@@ -68,16 +68,16 @@
 
     const projects = [
         {
-            image: '/image1.jpg',
+            image: '/image1.png',
             title: 'Damilola Portfolio.',
             description: 'My Personal Portfolio Site.',
             link: 'https://www.damilolcodes.xyz'
         },
         {
-            image: '/image2.jpg',
-            title: 'Tech Portfolio',
-            description: 'Innovating with the latest tech.',
-            link: 'https://wwww.crackk.space'
+            image: '/image2.png',
+            title: 'Crypto Converter.',
+            description: 'A modern, responsive crypto checkout experience built with Next.js 15, React 19, and TypeScript..',
+            link: 'https://dami-novacrust-assessment.vercel.app'
         },
         {
             image: '/lenno.png',
@@ -87,22 +87,61 @@
         },
     ];
     const experiences = [
-        {year: 'Sep. 2023 - 2024', role: 'Frontend Engineer', company: 'ALX AFRICA', logo: '/alx.jpeg', remote: true},
-        {year: '2024 - Present', role: 'React.js Developer', company: 'Upwork', logo: '/upwork.png', remote: true},
-        {year: '2024 - Present', role: 'Vue.js Developer', company: 'Upwork', logo: '/upwork.png', remote: true},
-        {year: 'Feb - Jun 2024', role: 'Frontend Intern', company: 'Innkeeper', logo: '/innkeeper.png', remote: false, hybrid: true},
+        {
+            year: 'Jan 2026 - Present',
+            role: 'Full-stack Engineer',
+            company: 'GAMMS',
+            logo: '/gamms_b_logo.png',
+            remote: true,
+            description: 'Building full-stack web applications with modern technologies. Collaborating with cross-functional teams to deliver scalable solutions. Currently contributing to core features and infrastructure improvements.'
+        },
+        {
+            year: 'Sep. 2023 - 2024',
+            role: 'Frontend Engineer',
+            company: 'ALX AFRICA',
+            logo: '/alx.jpeg',
+            remote: true,
+            description: 'Developed responsive user interfaces using React and Vue.js. Implemented design systems and component libraries. Mentored junior developers and contributed to best practices documentation.'
+        },
+        {
+            year: '2024 - Present',
+            role: 'React.js Developer',
+            company: 'Upwork',
+            logo: '/upwork.png',
+            remote: true,
+            description: 'Worked on diverse client projects ranging from e-commerce platforms to SaaS applications. Optimized performance and improved user experiences. Maintained clean, documented code for long-term maintainability.'
+        },
+        {
+            year: '2024 - Present',
+            role: 'Vue.js Developer',
+            company: 'Upwork',
+            logo: '/upwork.png',
+            remote: true,
+            description: 'Specialized in Vue.js projects with focus on component architecture and state management. Integrated backend APIs and implemented complex UI interactions. Delivered projects on time with comprehensive documentation.'
+        },
+        {
+            year: 'Feb - Jun 2024',
+            role: 'Frontend Intern',
+            company: 'Innkeeper',
+            logo: '/innkeeper.png',
+            hybrid: true,
+            description: 'Assisted in developing frontend features for booking management platform. Learned best practices in code organization and testing. Collaborated with senior developers on real-world projects.'
+        },
     ];
 
-    // Helper to create initials for a simple logo if no image is provided
-    const getInitials = (name) => {
-        if (!name) return '';
-        return name
-            .split(' ')
-            .map(w => w[0])
-            .slice(0,2)
-            .join('')
-            .toUpperCase();
-    }
+	// Helper to create initials for a simple logo if no image is provided
+	const getInitials = (name) => {
+		if (!name) return '';
+		return name
+			.split(' ')
+			.map(w => w[0])
+			.slice(0,2)
+			.join('')
+			.toUpperCase();
+	}
+
+	// Track expanded state for each experience item
+	const expandedExperiences = ref({});
 
 </script>
 <template>
@@ -115,7 +154,7 @@
                     </a>
                     <a href="https://x.com/damilolacodes" target="_blank" class="p-1 sm:p-2"><IconBrandX class="w-5 h-5 sm:w-6 sm:h-6"/></a>
                     <a href="https://linkedin.com/in/damilolacodes001" target="_blank" class="p-1 sm:p-2"><IconBrandLinkedin class="w-5 h-5 sm:w-6 sm:h-6"/></a>
-                    <a href="/Damilola_Odeyemi_Frontend_Resume_2025.pdf">
+                    <a href="/Damilola-Odeyemi-Frontend-CV-2026.pdf">
                         <DocumentTextIcon class="w-5 h-5 sm:w-6 sm:h-6 mx-1 sm:mx-2 cursor-pointer"/>
                     </a>
                     <a href="https://calendly.com/damilola-codes">
@@ -166,7 +205,7 @@
             
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/herobg.png" 
+            imageSrc="/image1.png" 
             altText="Another Project Showcase"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
@@ -174,7 +213,7 @@
             
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/image2.jpg"
+            imageSrc="/image2.png"
             altText="Third Project Example"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
@@ -191,7 +230,7 @@
             
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/herobg.png"
+            imageSrc="/image1.png"
             altText="Another Project Showcase"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
@@ -199,7 +238,7 @@
             
             <div class="p-2 sm:p-3 md:p-4 lg:p-6 flex-shrink-0">
             <ProjectReviewCard
-            imageSrc="/image2.jpg"
+            imageSrc="/image2.png"
             altText="Third Project Example"
             borderColor="#e2e8f0"
             class="p-4 sm:p-6 md:p-8 lg:p-12"/>
@@ -244,33 +283,52 @@ With a solid understanding of UX principles, responsive design, and frontend arc
             <div
                 v-for="(exp, index) in experiences"
                 :key="index"
-                class="flex flex-col sm:flex-row sm:items-center gap-4 bg-white rounded-2xl p-4 shadow-sm"
+                class="experience-item flex flex-col gap-4 bg-white rounded-lg border border-gray-200 p-4 sm:p-6 hover:border-gray-300 transition-colors cursor-pointer"
+                @click="expandedExperiences[index] = !expandedExperiences[index]"
             >
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <div class="w-12 h-12 sm:w-14 md:w-16 rounded-md overflow-hidden bg-gray-100">
-                        <template v-if="exp.logo">
-                            <img :src="exp.logo" :alt="exp.company + ' logo'" class="w-full h-full object-cover" />
-                        </template>
-                        <template v-else>
-                            <div class="w-full h-full flex items-center justify-center text-sm sm:text-base font-semibold text-gray-800">{{ getInitials(exp.company) }}</div>
-                        </template>
+                <!-- Main container with logo, content, and right-side info -->
+                <div class="flex gap-4">
+                    <!-- Logo -->
+                    <div class="flex-shrink-0">
+                        <div class="w-12 h-12 sm:w-14 md:w-16 rounded-md overflow-hidden bg-gray-100">
+                            <template v-if="exp.logo">
+                                <img :src="exp.logo" :alt="exp.company + ' logo'" class="w-full h-full object-cover" />
+                            </template>
+                            <template v-else>
+                                <div class="w-full h-full flex items-center justify-center text-sm sm:text-base font-semibold text-gray-800">{{ getInitials(exp.company) }}</div>
+                            </template>
+                        </div>
+                    </div>
+
+                    <!-- Left side: Company and Role -->
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800">{{ exp.company }}</h4>
+                        <p class="text-sm sm:text-base md:text-lg text-gray-600 mt-1">{{ exp.role }}</p>
+                    </div>
+
+                    <!-- Right side: Date (top) and Job Type (bottom) -->
+                    <div class="flex flex-col items-end justify-between flex-shrink-0">
+                        <span class="text-xs sm:text-sm font-semibold text-gray-700 whitespace-nowrap">{{ exp.year }}</span>
+                        <div class="flex gap-2">
+                            <span v-if="exp.remote" class="inline-block bg-green-50 text-green-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Remote</span>
+                            <span v-if="exp.hybrid" class="inline-block bg-yellow-50 text-yellow-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Hybrid</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Company + meta inline, role below -->
-                <div class="flex-1 min-w-0">
-                    <div class="flex items-center justify-between gap-4">
-                        <div class="flex items-center gap-3 min-w-0">
-                            <h4 class="text-base sm:text-lg md:text-xl font-semibold text-gray-800 truncate">{{ exp.company }} •</h4>
-                            <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500 whitespace-nowrap">
-                                <span>{{ exp.year }}</span> •
-                                <span v-if="exp.remote" class="inline-block bg-green-50 text-green-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Remote</span>
-                                <span v-if="exp.hybrid" class="inline-block bg-yellow-50 text-yellow-700 text-xs sm:text-sm px-2 py-0.5 rounded-full">Hybrid</span>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="text-sm sm:text-base md:text-lg text-gray-600 mt-2 truncate">{{ exp.role }}</p>
+                <!-- Expandable description section -->
+                <div v-if="expandedExperiences[index]" class="mt-4 pt-4 border-t border-gray-100 animate-in fade-in duration-300">
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed">{{ exp.description }}</p>
+                </div>
+
+                <!-- Learn More / Show Less toggle -->
+                <div class="flex justify-start">
+                    <button 
+                        class="text-sm font-semibold text-gray-700 hover:text-gray-600 transition-colors flex items-center gap-1 underline "
+                        @click.stop="expandedExperiences[index] = !expandedExperiences[index]"
+                    >
+                        <span>{{ expandedExperiences[index] ? 'Show Less' : 'Learn More' }}</span>
+                    </button>
                 </div>
             </div>
         </div>
@@ -279,7 +337,7 @@ With a solid understanding of UX principles, responsive design, and frontend arc
 
         <!--Projects-->
         <section id="projects" class="py-8 sm:py-10">
-            <h3 class="flex justify-center pb-12 place-items-center text-xl sm:text-2xl md:text-3xl font-semibold text-center">Check What I've Been Up To</h3>
+            <h3 class="flex justify-center pb-12 place-items-center text-2xl sm:text-2xl md:text-3xl font-semibold text-center underline">Check What I've Been Up To.</h3>
              <div class="flex flex-wrap gap-4 sm:gap-6 justify-center px-2 sm:px-4"> 
                 <ProjectCard 
                 v-for="(project, index) in projects"

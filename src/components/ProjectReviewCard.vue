@@ -1,5 +1,5 @@
 <template>
-    <div class="relative bg-gray-300 rounded-2xl p-4 w-[500px] max-w-3xl mx-auto">
+    <div class="relative bg-white/10 backdrop-blur-xl rounded-2xl p-4 w-[500px] max-w-3xl mx-auto border border-white/40 hover:border-white/60 hover:bg-white/30 transition-all duration-300">
         <span
         v-for="(pos, index) in boltPosition"
         :key="index"

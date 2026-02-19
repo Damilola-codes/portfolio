@@ -36,15 +36,15 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll));
       <div>
         <h4 class="text-md font-medium mb-6">Connect</h4>
         <div class="flex justify-center md:justify-start space-x-6 mt-2">
-          <a href="https://x.com/damilolacodes"      target="_blank" class="hover:text-white transition"><IconBrandX class="w-5 h-5"/></a>
-          <a href="https://linkedin.com/in/damilolacodes001" target="_blank" class="hover:text-white transition"><IconBrandLinkedin class="w-5 h-5"/></a>
-          <a href="mailto:damilolacodes@gmail.com"            class="hover:text-white transition flex items-center gap-1 text-sm">
+          <a href="https://x.com/damilolacodes"      target="_blank"><IconBrandX class="w-5 h-5"/></a>
+          <a href="https://linkedin.com/in/damilolacodes001" target="_blank"><IconBrandLinkedin class="w-5 h-5"/></a>
+          <a href="mailto:damilolacodes@gmail.com"            target="_blank">
               <EnvelopeIcon class="w-5 h-5"/>
           </a>
           <a href="https://github.com/damilola-codes">
             <IconBrandGithub class="w-5 h-5"/>
           </a>
-          <a href="/Damilola_Odeyemi_Frontend_Resume_2025.pdf.pdf">
+          <a href="/Damilola-Odeyemi-Frontend-CV-2026.pdf">
             <DocumentTextIcon class="w-5 h-5"/>
           </a>
         </div>

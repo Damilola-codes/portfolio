@@ -43,13 +43,6 @@ If you feel we could create something impactful together, drop a message below. 
           />
         </div>
 
-        <input
-          type="text"
-          name="subject"
-          placeholder="Subject (e.g. Freelance Project, Collaboration, e.t.c)"
-          class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-black"
-        />
-
         <textarea
           name="message"
           rows="5"

@@ -10,7 +10,7 @@
                 :href="link || '#'"
                 :target="link ? '_blank' : null"
                 :rel="link ? 'noopener noreferrer' : null"
-                class="mt-4 inline-flex items-center gap-2 text-sm font-medium transition group bg-gray-300 px-4 py-3 rounded-xl place-items-center"
+                class="mt-4 inline-flex items-center gap-2 text-sm font-medium transition group bg-gray-300 px-4 py-3 rounded-xl place-items-cente59r"
             >
                 View Project
                 <ChevronRightIcon class=" w-5 h-5  transition-transform duration-300 transform group-hover:translate-x-1"/>
